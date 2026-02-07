@@ -9,9 +9,21 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@gnosis-guild/zodiac-core": "^3.0.1",
+    "@metamask/sdk": "^0.34.0",
+    "@rainbow-me/rainbowkit": "^2.2.10",
+    "@safe-global/api-kit": "^4.0.1",
+    "@safe-global/protocol-kit": "^6.1.2",
+    "@safe-global/sdk-starter-kit": "^3.0.2",
+    "@safe-global/types-kit": "^3.0.0",
+    "@tanstack/react-query": "^5.90.20",
+    "abitype": "^1.2.3",
+    "ethers": "^6.0.0",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "viem": "^2.45.1",
+    "wagmi": "^3.4.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
