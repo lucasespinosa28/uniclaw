@@ -150,13 +150,13 @@ export function ConfigureRoles({ safeAddress, onConfigured, onRolesAddressKnown,
     }
   }, [walletClient, address, safeAddress, rolesAddress]);
 
-  // Step 3: Configure the swap-only role for User B
+  // Step 3: Configure the swap-only role for the agent
   const handleConfigureRole = useCallback(async () => {
     if (!walletClient || !address || !rolesAddress || !userB.trim()) return;
 
     setStatus({
       status: 'pending',
-      message: 'Configuring swap-only role for User B...',
+      message: 'Configuring swap-only role for agent...',
     });
 
     try {
@@ -167,7 +167,7 @@ export function ConfigureRoles({ safeAddress, onConfigured, onRolesAddressKnown,
       setStep('done');
       setStatus({
         status: 'success',
-        message: `User B (${userB.slice(0, 10)}...) assigned the swap-only role.`,
+        message: `Agent (${userB.slice(0, 10)}...) assigned the swap-only role.`,
       });
       setUserB('');
       onConfigured(rolesAddress);
@@ -405,7 +405,7 @@ export function ConfigureRoles({ safeAddress, onConfigured, onRolesAddressKnown,
             {/* Member assignment */}
             <div>
               <label className="block text-sm text-zinc-400 mb-1">
-                User B Address (swap-only permissions)
+                Agent Address (swap-only permissions)
               </label>
               <input
                 type="text"
@@ -416,7 +416,7 @@ export function ConfigureRoles({ safeAddress, onConfigured, onRolesAddressKnown,
               />
               <p className="mt-1 text-xs text-zinc-500">
                 {isTargetScoped
-                  ? 'Enter User B address and assign the swap role.'
+                  ? 'Enter the OpenClaw agent address and assign the swap role.'
                   : 'This will also allow the SwapRouter target automatically.'}
               </p>
             </div>

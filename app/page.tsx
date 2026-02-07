@@ -51,7 +51,7 @@ export default function Home() {
               </h1>
               <p className="mt-3 text-lg text-zinc-300">
                 Delegate scoped Uniswap swap permissions without sharing your private keys.
-              </p>ß
+              </p>
               <p className="mt-2 text-sm text-zinc-500">
                 Safe Smart Account &bull; Zodiac Roles Modifier &bull; Uniswap &bull; Sepolia Testnet
               </p>
@@ -71,12 +71,12 @@ export default function Home() {
               </div>
               <h3 className="text-sm font-semibold text-white mb-2">The DApp</h3>
               <p className="text-xs leading-relaxed text-zinc-400">
-                Uniclaw lets an <strong className="text-zinc-300">Admin (User A)</strong> deploy a Safe
+                Uniclaw lets an <strong className="text-zinc-300">Admin</strong> deploy a Safe
                 smart account and attach a Zodiac Roles Modifier. The admin then creates a
                 tightly scoped role that permits <em>only</em> the{' '}
                 <code className="rounded bg-zinc-800 px-1 text-blue-400">exactInputSingle</code>{' '}
                 function on the Uniswap SwapRouter. A{' '}
-                <strong className="text-zinc-300">Delegate (User B)</strong> can then execute swaps on
+                <strong className="text-zinc-300">OpenClaw Agent</strong> can then execute swaps on
                 behalf of the Safe — without ever touching any other funds or contracts.
               </p>
             </div>
@@ -93,23 +93,23 @@ export default function Home() {
                 wallet, then accepts configuration for the Safe and Roles Modifier addresses.
                 The agent can save Uniswap pools and execute swaps — all through the Roles
                 Modifier so it can <em>never</em> exceed the permissions the admin defined.
-                The agent operates as User B with the scoped swap role.
+                The agent operates with the scoped swap role — no private keys shared.
               </p>
-              <div className="mt-3 flex items-center gap-2">
+              <div className="mt-4 flex flex-col gap-2">
+                <a
+                  href="/uniclaw.zip"
+                  download
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-purple-600 border border-purple-500 px-4 py-2.5 text-sm font-semibold text-white hover:bg-purple-500 transition-colors shadow-lg shadow-purple-900/30"
+                >
+                  ⬇ Download Skill (.zip)
+                </a>
                 <a
                   href="https://openclaw.ai/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 rounded bg-blue-800/60 border border-blue-700 px-2.5 py-1 text-xs font-medium text-blue-300 hover:bg-blue-700/60 transition-colors"
+                  className="inline-flex items-center justify-center gap-1 rounded-lg bg-zinc-800 border border-zinc-700 px-3 py-1.5 text-xs font-medium text-zinc-300 hover:bg-zinc-700 transition-colors"
                 >
-                  openclaw.ai ↗
-                </a>
-                <a
-                  href="/uniclaw.zip"
-                  download
-                  className="inline-flex items-center gap-1 rounded bg-zinc-800 border border-zinc-700 px-2.5 py-1 text-xs font-medium text-zinc-300 hover:bg-zinc-700 transition-colors"
-                >
-                  ⬇ Download Skill
+                  Learn more at openclaw.ai ↗
                 </a>
               </div>
             </div>
@@ -123,7 +123,7 @@ export default function Home() {
               <p className="text-xs leading-relaxed text-zinc-400">
                 All assets live in the <strong className="text-zinc-300">Safe multisig</strong> — never
                 in any delegate wallet. The Zodiac Roles Modifier enforces{' '}
-                <strong className="text-zinc-300">on-chain</strong> that User B can only call one
+                <strong className="text-zinc-300">on-chain</strong> that the agent can only call one
                 specific function on one specific contract. Even a compromised delegate key cannot
                 drain funds, call other contracts, or change configuration. Only the Safe owner
                 can modify roles, revoke access, or withdraw assets.
@@ -140,7 +140,7 @@ export default function Home() {
               { step: '1', title: 'Deploy Safe', desc: 'Admin creates a Safe smart account that holds all assets.' },
               { step: '2', title: 'Attach Roles', desc: 'A Zodiac Roles Modifier is deployed and enabled as a Safe module.' },
               { step: '3', title: 'Scope Permissions', desc: 'Admin scopes the SwapRouter target and allows only exactInputSingle.' },
-              { step: '4', title: 'Delegate Swaps', desc: 'User B (or an agent) executes swaps through the Roles Modifier.' },
+              { step: '4', title: 'Agent Swaps', desc: 'The OpenClaw agent executes swaps through the Roles Modifier.' },
             ].map((item) => (
               <div key={item.step} className="flex gap-3 rounded-lg border border-zinc-800 bg-zinc-950 p-4">
                 <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-purple-600 text-xs font-bold text-white">
@@ -241,7 +241,7 @@ export default function Home() {
             <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-base">🤖</span>
-                <p className="text-sm font-medium text-zinc-300">User B — Delegate / Agent</p>
+                <p className="text-sm font-medium text-zinc-300">OpenClaw Agent</p>
               </div>
               <p className="text-xs text-zinc-500">
                 Assigned a scoped role. Can <strong className="text-zinc-400">only</strong> call{' '}

@@ -20,7 +20,7 @@ export interface RolesModifierDeployment {
 
 export interface RoleConfig {
   roleId: number;
-  /** The member (User B) who receives this role */
+  /** The member (agent) who receives this role */
   member: string;
   /** Target contract the role can call */
   targetAddress: string;

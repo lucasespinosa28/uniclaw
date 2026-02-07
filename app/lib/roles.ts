@@ -103,7 +103,7 @@ export async function deployRolesModifier(
 
 /**
  * Configure the Roles Modifier:
- *  1. Assign User B to a role (SWAP_ROLE_ID = 1)
+ *  1. Assign the agent to a role (SWAP_ROLE_ID = 1)
  *  2. Scope the role to only the Uniswap SwapRouter
  *  3. Allow only the `exactInputSingle` function
  *
@@ -383,11 +383,11 @@ export function buildRoleConfigTxs(
 }
 
 // ─────────────────────────────────────────────
-// 3. Execute a Swap via the Roles Modifier (User B)
+// 3. Execute a Swap via the Roles Modifier (Agent)
 // ─────────────────────────────────────────────
 
 /**
- * User B calls `execTransactionWithRole` on the Roles Modifier.
+ * The agent calls `execTransactionWithRole` on the Roles Modifier.
  * The modifier verifies the call is allowed by the role, then
  * forwards it to the Safe which executes the swap.
  */

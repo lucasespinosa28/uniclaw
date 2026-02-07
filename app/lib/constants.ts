@@ -225,7 +225,7 @@ export const SWAP_ROUTER_ABI = [
 /** The 4-byte selector for exactInputSingle(ExactInputSingleParams) */
 export const EXACT_INPUT_SINGLE_SELECTOR = '0x04e45aaf' as const;
 
-/** Default role ID we assign to User B */
+/** Default role ID we assign to the agent */
 export const SWAP_ROLE_ID = 1;
 
 /** Sepolia chain ID */

@@ -32,7 +32,7 @@ export function ExecuteSwap({
 
   const handleSwap = useCallback(async () => {
     if (!walletClient || !address) {
-      setStatus({ status: 'error', message: 'Connect User B wallet.' });
+      setStatus({ status: 'error', message: 'Connect the agent wallet.' });
       return;
     }
 
@@ -78,17 +78,17 @@ export function ExecuteSwap({
   return (
     <div className="rounded-xl border border-zinc-700 bg-zinc-900 p-6">
       <h2 className="text-xl font-semibold text-white mb-4">
-        3. Execute Swap (User B)
+        3. Execute Swap (Agent)
       </h2>
 
       <div className="mb-4 rounded-lg border border-zinc-700 bg-zinc-800/50 p-4">
         <p className="text-xs text-zinc-400 mb-2">How it works:</p>
         <ol className="list-decimal list-inside space-y-1 text-xs text-zinc-400">
           <li>
-            User B calls <code className="text-blue-300">execTransactionWithRole</code> on the Roles Modifier
+            The agent calls <code className="text-blue-300">execTransactionWithRole</code> on the Roles Modifier
           </li>
           <li>
-            The modifier checks User B has the <strong>Swap Role</strong> and the
+            The modifier checks the agent has the <strong>Swap Role</strong> and the
             target function is <code className="text-blue-300">exactInputSingle</code>
           </li>
           <li>
@@ -103,7 +103,7 @@ export function ExecuteSwap({
       <div className="space-y-4">
         <div>
           <label className="block text-sm text-zinc-400 mb-1">
-            Connected as (User B)
+            Connected as (Agent)
           </label>
           <p className="font-mono text-sm text-zinc-300 truncate">
             {address ?? 'Not connected'}
